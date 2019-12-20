@@ -4,7 +4,7 @@
     "height": 32, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/clementine"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/music"],
     "modules-center": ["sway/window"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
     "sway/workspaces": {
@@ -61,12 +61,11 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/clementine": {
+    "custom/music": {
         "format": "🎧 {}",
         "max-length": 60,
         "interval": 5, // Remove this if your script is endless and write in loop
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        "exec-if": "pgrep clementine",
 	"tooltip": false,
 	"on-click": "playerctl play-pause",
 	"on-scroll-up": "playerctl previous",
