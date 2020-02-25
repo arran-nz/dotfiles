@@ -267,9 +267,9 @@ __git_prompt() {
     local last_exit="$?" # keep here.. so we get the last command
 
     # setup PS1
-    local host="${GREY}\h:${RESET}"
-    local dir="${CYAN}\W${RESET}" 
-    PS1="[$host $dir]"
+    local host="${GREY}\h${RESET}"
+    local dir="${CYAN}\w${RESET}"
+    PS1="[$host: $dir]"
 
     # when in git repository
     local gitdir="$(__git_dirname)"
