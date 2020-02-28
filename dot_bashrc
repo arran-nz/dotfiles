@@ -17,7 +17,28 @@ export PATH
 
 # User specific aliases and function
 
+# Alias --------------
+alias ls="ls -h --color=auto --group-directories"
+alias grep="grep --color=auto"
+alias hgrep="history | grep"
+alias ccat="highlight -O ansi --"
+
+# Shortcuts
+alias g="git"
+alias v="vi"
+alias r="ranger"
+
+# Git Bash PS1 Config
 source ~/.bash_git_ps1.sh
 
-# WSL Docker Connection
+# WSL Settings ------------
 export DOCKER_HOST=tcp://localhost:2375
+# X Server
+export DISPLAY=0:0
+
+# Bash --------------------
+# Set VIM Mode
+set -o vi
+
+# Remove the need to type `cd` to enter directories
+shopt -s autocd
