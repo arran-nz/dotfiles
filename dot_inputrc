@@ -1,0 +1,20 @@
+# Run the following to apply changes
+# bind -f ~/.inputrc
+
+# Use Vi style over Emacs
+set editing-mode vi
+
+
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# Tab to complete color
+set colored-stats On
+
+# Omit completion prefix when the prefix is equal within 3 chars
+set completion-prefix-display-length 3
+
+# Show all completions as soon as I press tab, even if there's more than one
+set show-all-if-ambiguous on
+# Ignore case
+set completion-ignore-case on
