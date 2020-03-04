@@ -36,9 +36,11 @@ export DOCKER_HOST=tcp://localhost:2375
 # X Server
 export DISPLAY=0:0
 
-# Bash --------------------
-# Set VIM Mode
-set -o vi
-
 # Remove the need to type `cd` to enter directories
 shopt -s autocd
+
+
+# Remove all background colors!
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
