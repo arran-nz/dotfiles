@@ -11,6 +11,10 @@ set $mod Mod1
 ### Notification Service
 exec mako
 
+
+# Import theme first so invidual modifications can be made
+include ~/.config/sway/themes/monokai
+
 ### Clipman
 #exec wl-paste -t text --watch clipman store
 #exec wl-paste -p -t text --watch clipman store --histpath='~/.local/share/clipman-primary.json'
@@ -32,19 +36,11 @@ set $term alacritty
 # # DMenu
 set $dmenu dmenu_path | dmenu | xargs swaymsg exec --
 
-# Rofi Menu
-set $rofi rofi -combi-modi window,drun,ssh,run -show combi -show-icons 
+for_window [app_id="Alacritty" title="launcher"] floating enable, border pixel 5, sticky enable
+set $swaymenu alacritty -d 50 30 -t launcher -e "/home/arran/.config/sway/scripts/sway-launcher-desktop.sh" | xargs swagmsg exec --
 
 # Set Menu
-set $menu $dmenu
-#
-# Outputs
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+set $menu $swaymenu
 
 # Sway Idle
 exec swayidle -w \
@@ -54,7 +50,8 @@ exec swayidle -w \
          before-sleep 'swaylock -f -c 000000'
 
 # Dont idle on windows that are full screen
-for_window [class="^.*"] inhibit_idle fullscreen for_window [app_id="^.*"] inhibit_idle full
+for_window [class="^.*"] inhibit_idle fullscreen
+for_window [app_id="^.*"] inhibit_idle full
 
 
 # System Menu
@@ -79,24 +76,6 @@ mode "$Pause" {
     bindsym Escape  mode "default"
 }
 bindsym $mod+x mode "$Pause" 
-
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Multimedia Input Bindings
 
@@ -162,8 +141,6 @@ bindsym XF86AudioMute        exec $volumepath -mn -e $notify_expire -t $statuscm
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -255,21 +232,22 @@ bindsym XF86AudioMute        exec $volumepath -mn -e $notify_expire -t $statuscm
 #
 # Resizing containers:
 #
+set $px 40px
 mode "resize" {
     # left will shrink the containers width
 # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width $px
+    bindsym $down resize grow height $px
+    bindsym $up resize shrink height $px
+    bindsym $right resize grow width $px
 
     # ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width $px
+    bindsym Down resize grow height $px
+    bindsym Up resize shrink height $px
+    bindsym Right resize grow width $px
 
     # return to default mode
     bindsym Return mode "default"
@@ -278,17 +256,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-# Theme:
-
-include ~/.config/sway/themes/monokai
-
 bar {
 	swaybar_command waybar
 
 }
 
-
 # Run a terminal on startup
-exec $term
+exec $menu
 
 include /etc/sway/config.d/*
