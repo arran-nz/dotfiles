@@ -53,6 +53,14 @@ exec swayidle -w \
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle full
 
+# Screenshots
+# ----------
+for_window [app_id="zenity" title="screenshot"] floating enable
+# Entire screen + menu
+bindsym print exec ~/.config/sway/scripts/screen.sh
+# Screen region + menu
+bindsym Shift+print exec ~/.config/sway/scripts/screen.sh -s
+
 
 # System Menu
 set $wmexit     swaymsg exit
