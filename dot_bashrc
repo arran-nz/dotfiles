@@ -25,8 +25,10 @@ alias ccat="highlight -O ansi --"
 
 # Shortcuts
 alias g="git"
-alias v="vi"
+alias v="nvim"
 alias r="ranger"
+
+export EDITOR="nvim"
 
 # Git Bash PS1 Config
 source ~/.bash_git_ps1.sh
