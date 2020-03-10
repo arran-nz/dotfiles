@@ -13,7 +13,7 @@ exec mako
 
 
 # Import theme first so invidual modifications can be made
-include ~/.config/sway/themes/monokai
+include ~/.config/sway/themes/soviet
 
 ### Clipman
 #exec wl-paste -t text --watch clipman store
