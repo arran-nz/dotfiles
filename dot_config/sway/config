@@ -269,6 +269,10 @@ bar {
 
 }
 
+# Custom Window Treatment
+for_window [app_id="org.clementine-player.clementine"] floating enable
+
+
 # Run a terminal on startup
 exec $menu
 
