@@ -4,6 +4,13 @@
 # Use Vi style over Emacs
 set editing-mode vi
 
+# Change the cursor when in Vi Mode
+set show-mode-in-prompt on
+set vi-cmd-mode-string "\1\e[1 q\2"
+set vi-ins-mode-string "\1\e[5 q\2"
+
+# Reduce timeout between CMD and insert mode
+set keyseq-timeout 1
 
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
