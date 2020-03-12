@@ -11,14 +11,13 @@ set $mod Mod1
 ### Notification Service
 exec mako
 
-
 # Import theme first so invidual modifications can be made
 include ~/.config/sway/themes/soviet
 
 ### Clipman
 #exec wl-paste -t text --watch clipman store
 #exec wl-paste -p -t text --watch clipman store --histpath='~/.local/share/clipman-primary.json'
-#bindsym $mod+insert exec clipman pick --histpath='~/.local/share/clipman-primary.json'
+# bindsym $mod+insert exec clipman pick --histpath='~/.local/share/clipman-primary.json'
 
 ### Variables
 #
@@ -28,21 +27,37 @@ set $down j
 set $up k
 set $right l
 
+
+
 # Your preferred terminal emulator
 set $term alacritty
 
-# Your preferred application launcher
-# Note: it's recommended that you pass the final command to sway
-# # DMenu
+### Terminals
+
+# Quick floating terminal [ MOD + Shift + Return ]
+for_window [app_id="Alacritty" title="Floating Terminal"] floating enable, sticky enable, show_marks no
+set $qterm alacritty -t "Floating Terminal"
+# start a quick floating terminal
+bindsym $mod+Shift+Return exec $qterm
+
+# Current Working Dir terminal [ MOD + Control + Return ]
+bindsym $mod+Control+Return exec alacritty --working-directory $(/home/arran/.config/sway/scripts/cwd-term.sh)
+
+### Application Launcher
+
+# DMenu
 set $dmenu dmenu_path | dmenu | xargs swaymsg exec --
 
-for_window [app_id="Alacritty" title="launcher"] floating enable, border pixel 5, sticky enable
+# Sway Menu
+for_window [app_id="Alacritty" title="launcher"] floating enable, border pixel 5, sticky enable, show_marks no
 set $swaymenu alacritty -d 50 30 -t launcher -e "/home/arran/.config/sway/scripts/sway-launcher-desktop.sh" | xargs swagmsg exec --
 
 # Set Menu
 set $menu $swaymenu
 
-# Sway Idle
+
+
+### Sway Idle
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' \
@@ -53,7 +68,7 @@ exec swayidle -w \
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle full
 
-# Screenshots
+### Screenshots
 # ----------
 for_window [app_id="zenity" title="screenshot"] floating enable
 # Entire screen + menu
@@ -62,7 +77,7 @@ bindsym print exec ~/.config/sway/scripts/screen.sh
 bindsym Shift+print exec ~/.config/sway/scripts/screen.sh -s
 
 
-# System Menu
+### System Menu
 set $wmexit     swaymsg exit
 set $lock       swaylock -e -f -c 000000  -t
  
@@ -271,9 +286,9 @@ bar {
 
 # Custom Window Treatment
 for_window [app_id="org.clementine-player.clementine"] floating enable
+for_window [app_id="pavucontrol"] floating enable
 
-
-# Run a terminal on startup
+# Run the application menu on startup
 exec $menu
 
 include /etc/sway/config.d/*
