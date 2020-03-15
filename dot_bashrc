@@ -25,7 +25,9 @@ alias ccat="highlight -O ansi --"
 
 # Shortcuts
 alias g="git"
+alias k="kubectl"
 alias v="nvim"
+alias vi="nvim"
 alias r="ranger"
 
 export EDITOR="nvim"
