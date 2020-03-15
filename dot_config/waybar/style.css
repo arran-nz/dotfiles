@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: "KyrillaSansSerif";
-    font-size: 16px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -11,16 +11,10 @@ window#waybar {
     border-bottom: 5px solid #f18d2d;
     color: #f18d2d;
     background: #333142;
-    background: #232627;
-}
-
-#window {
-    
 }
 
 #workspaces button {
-    padding: 0 10px;
-    color: white;
+    color: #f18d2d;
 }
 
 #workspaces button.focused {
@@ -28,11 +22,21 @@ window#waybar {
     color: #333142;
 }
 
+#mode {
+    background-color: #fd472f;
+    color: white;
+    border-bottom: 5px solid white;
+}
 
-
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-clementine, #tray, #mode {
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode {
     padding: 0 5px;
-    margin: 0 10px;
+    margin: 0 5px;
+}
+
+#custom-music {
+    color: white;
+    font-size: 12px;
+    margin: 0 15px;
 }
 
 #clock {

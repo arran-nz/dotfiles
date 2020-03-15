@@ -29,7 +29,7 @@ set $unfocused_bgcolor $c4
 set $unfocused_textcolor $dim
 set $unfocused_indicator $c5
 
-set $urgent_bgcolor $c3
+set $urgent_bgcolor $c1
 set $urgent_textcolor $c4
 set $urgent_indicator $c3
 
@@ -49,9 +49,9 @@ smart_gaps on
 smart_borders on
 
 # Hide Title Bars
-for_window [app_id="^.*"] border pixel 4
-default_border pixel 2
-default_floating_border normal
+for_window [app_id="^.*"] border pixel 4, opacity 0.95
+default_border pixel 4
+default_floating_border pixel 10
 hide_edge_borders smart
 
 client.focused $focused_bgcolor $focused_bgcolor $focused_textcolor $focused_indicator $focused_bgcolor
