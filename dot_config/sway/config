@@ -35,7 +35,7 @@ set $term alacritty
 ### Terminals
 
 # Quick floating terminal [ MOD + Shift + Return ]
-for_window [app_id="Alacritty" title="Floating Terminal"] floating enable, sticky enable, show_marks no
+for_window [app_id="Alacritty" title="Floating Terminal"] floating enable, show_marks no
 set $qterm alacritty -t "Floating Terminal"
 # start a quick floating terminal
 bindsym $mod+Shift+Return exec $qterm
@@ -49,7 +49,7 @@ bindsym $mod+Control+Return exec alacritty --working-directory $(/home/arran/.co
 set $dmenu dmenu_path | dmenu | xargs swaymsg exec --
 
 # Sway Menu
-for_window [app_id="Alacritty" title="launcher"] floating enable, border pixel 5, sticky enable, show_marks no
+for_window [app_id="Alacritty" title="launcher"] floating enable, sticky enable, opacity 1
 set $swaymenu alacritty -d 50 30 -t launcher -e "/home/arran/.config/sway/scripts/sway-launcher-desktop.sh" | xargs swagmsg exec --
 
 # Set Menu
