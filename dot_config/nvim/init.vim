@@ -22,22 +22,10 @@ let g:netrw_browse_split = 2
 
 let g:netrw_altv = 1
 
-" Set the width to 25% of the page
-let g:netrw_winsize = 25
 
 " Ingore SWP
 let g:netrw_list_hide= '.*\.swp$'
 
-
-" Disable arrow keys to FORCE good habits
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
 
 
 " Plugins
