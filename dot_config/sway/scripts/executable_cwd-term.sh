@@ -16,6 +16,7 @@ then
      
     # Get the current working directory
     workdir=$(readlink /proc/${ppid}/cwd)
+    notify-send -t 2000 "Terminal in $workdir"
     echo $workdir
 else
     notify-send -t 2000 -- "Failed to obtain current directory from $pname"
