@@ -1,10 +1,10 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32,
+    "height": 36,
     "modules-left": ["sway/workspaces", "custom/music"],
-    "modules-center": ["clock", "sway/mode"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "battery", "tray"],
+    "modules-center": ["sway/window", "sway/mode"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -34,12 +34,12 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 14,
         "spacing": 10
     },
     "clock": {
         // Human Friendly
-        "format": "{:%a - %b %d - %I:%M %p}",
+        "format": "{:%A, %B %d at %I:%M %p}",
         // 24hr Robot Friendly
         "format-alt": "{:%Y-%m-%d - %H:%M}"
     },
@@ -76,7 +76,7 @@
         "on-click": "pavucontrol"
     },
     "custom/music": {
-        "format": "🎧 {}",
+        "format": " {}",
         "max-length": 60,
         "interval": 5, // Remove this if your script is endless and write in loop
         "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
