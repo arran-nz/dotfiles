@@ -32,14 +32,22 @@ let g:netrw_list_hide= '.*\.swp$'
 " Vim-Plug Plugin Manager
 call plug#begin('~/local/share/nvim/plugged')
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Firefox nvim connection
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 call plug#end()
 
 
+" Deoplote 
+let g:deoplete#enable_at_startup = 1
+
 " Set Colorscheme
-colo xcodedark
+colo gruvbox
+
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_italicize_comments = 1
+
 
 " Enable Italics for xcode
 augroup vim-colors-xcode
