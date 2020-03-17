@@ -12,7 +12,7 @@ set $mod Mod1
 exec mako
 
 # Import theme first so invidual modifications can be made
-include ~/.config/sway/themes/soviet
+include ~/.config/sway/themes/gruvbox
 
 ### Clipman
 #exec wl-paste -t text --watch clipman store
@@ -86,7 +86,7 @@ set $locksoff   swayidle -w  \
                 timeout 2 'swaymsg "output * dpms off"' \
                 resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
  
-set $Pause System (l)lock, (k) locktoblack, (e) exit, (s) suspend, (r) reboot, (End) shutdown
+set $Pause  [L]ock, loc[K]toblack, [E]xit, [S]uspend, [R]eboot, [END] Shutdown
 mode "$Pause" {
     bindsym e       exec --no-startup-id $wmexit,               mode "default"
     bindsym s       exec --no-startup-id systemctl suspend,     mode "default"
