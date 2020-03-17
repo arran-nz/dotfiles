@@ -76,10 +76,10 @@
         "on-click": "pavucontrol"
     },
     "custom/music": {
-        "format": " {}",
-        "max-length": 60,
-        "interval": 5, // Remove this if your script is endless and write in loop
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+    "format": "  {}",
+    "max-length": 60,
+    "interval": 5, // Remove this if your script is endless and write in loop
+    "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
 	"tooltip": false,
 	"on-click": "playerctl play-pause",
 	"on-scroll-up": "playerctl previous",
