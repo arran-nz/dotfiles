@@ -8,7 +8,7 @@
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name}", 
+        "format": "{name} {icon}", 
         "format-icons": {
             "1:web": "www",
             "2:code": "",
@@ -17,8 +17,8 @@
             "5:music": "",
             "6:docs": "",
             "urgent": "",
-            "focused": "",
-            "default": ""
+            "focused": "X",
+            "default": "_"
         }
     },
 
