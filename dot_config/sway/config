@@ -50,7 +50,7 @@ set $dmenu dmenu_path | dmenu | xargs swaymsg exec --
 
 # Sway Menu
 for_window [app_id="Alacritty" title="launcher"] floating enable, sticky enable, opacity 1
-set $swaymenu alacritty -d 50 30 -t launcher -e "/home/arran/.config/sway/scripts/sway-launcher-desktop.sh" | xargs swagmsg exec --
+set $swaymenu alacritty -d 50 30 -t launcher -e "$HOME/.config/sway/scripts/sway-launcher-desktop.sh" | xargs swagmsg exec --
 
 # Set Menu
 set $menu $swaymenu
@@ -100,18 +100,10 @@ mode "$Pause" {
 }
 bindsym $mod+x mode "$Pause" 
 
-### Multimedia Input Bindings
-
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
 ## Volume control
 
 # Path to volume control, without trailing slash
-set $volumepath /home/arran/.config/sway/scripts/volume
+set $volumepath $HOME/.config/sway/scripts/volume
 
 # Command for the status line
 #   ie: i3blocks, i3status
@@ -137,9 +129,19 @@ set $notify_expire 500
 
 # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
 
-bindsym XF86AudioRaiseVolume exec $volumepath -np -e $notify_expire -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume exec $volumepath -np -e $notify_expire -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute        exec $volumepath -mn -e $notify_expire -t $statuscmd -u $statussig
+bindsym --locked XF86AudioRaiseVolume exec $volumepath -np -e $notify_expire -i $volumestep -t $statuscmd -u $statussig
+bindsym --locked XF86AudioLowerVolume exec $volumepath -np -e $notify_expire -d $volumestep -t $statuscmd -u $statussig 
+bindsym --locked XF86AudioMute        exec $volumepath -mn -e $notify_expire -t $statuscmd -u $statussig 
+
+### Multimedia Input Bindings
+
+# Media player controls
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioPause exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
+
+
 
 ### Key bindings
 #
