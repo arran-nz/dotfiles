@@ -79,10 +79,25 @@ bindsym Shift+print exec ~/.config/sway/scripts/screen.sh -s
 
 ### System Menu
 set $wmexit     swaymsg exit
-set $lock       swaylock -e -f -c 000000  -t
+
+# Lock to black
+set $lock       swaylock --ignore-empty-password \
+                --daemonize \
+                --color 1d2021 \
+                --show-keyboard-layout \
+                --font Inconsolata \
+                --text-color 282828 \
+                --ring-color 689d6a \
+                --ring-clear-color 98971a \
+                --line-ver-color ebdbb2 \
+                --line-uses-ring \
+
+
  
+
+# Lock to black, stop sending output to monitor.
 set $locksoff   swayidle -w  \
-                timeout 1 'swaylock -e -f -c 000000 -t' \
+                timeout 1 'swaylock -e -f -c 1d2021 -t' \
                 timeout 2 'swaymsg "output * dpms off"' \
                 resume 'swaymsg "output * dpms on"; pkill -nx swayidle'
  
