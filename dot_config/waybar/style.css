@@ -12,8 +12,6 @@ window#waybar {
     background: #1d2021;
 }
 
-#workspaces button {
-}
 
 #workspaces button.focused {
     background: #689d6a; 
@@ -55,30 +53,14 @@ window#waybar {
 }
 
 
-#cpu {
-}
-
-#memory {
-}
-
-#network {
-}
-
 #network.disconnected {
     color: #cc241d;
     border-bottom: 5px solid #cc241d;
 }
 
-#pulseaudio {
-}
 
 #pulseaudio.muted {
     padding: 0 20px;
     color: #cc241d;
     border-bottom: 5px solid #cc241d;
 }
-
-#tray {
-
-}
-
