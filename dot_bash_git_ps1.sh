@@ -267,9 +267,12 @@ __git_prompt() {
     local last_exit="$?" # keep here.. so we get the last command
 
     # setup PS1
-    local host="${GREY}\h${RESET}"
-    local dir="${CYAN}\w${RESET}"
-    PS1="[$host: $dir]"
+    local user="${GREEN}\u${RESET}"
+    local host="${CYAN}\h${RESET}"
+    local dir="${GREY}\w${RESET}"
+    local sep="${GREY}@${RESET}"
+
+    PS1="[$user$sep$host] $dir"
 
     # when in git repository
     local gitdir="$(__git_dirname)"
@@ -311,7 +314,8 @@ __git_prompt() {
                 fi
             ;;
         esac
-        branch="${YELLOW}${branch}${RESET}"
+
+        branch="${CYAN}${branch}${RESET}"
 
         # update PS1
         PS1="${PS1} ${branch}${extras}"
@@ -325,6 +329,6 @@ __git_prompt() {
         marker="$RED"
     fi
     marker="${marker}\$${RESET}"
-    PS1="${PS1} → \n\n${marker} "
+    PS1="\n${PS1} → \n${marker} "
 }
 PROMPT_COMMAND=__git_prompt
