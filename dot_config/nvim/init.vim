@@ -28,6 +28,17 @@ let g:netrw_list_hide= '.*\.swp$'
 
 
 
+
+" Deoplote 
+let g:deoplete#enable_at_startup = 1
+
+" Set Colorscheme
+colo gruvbox
+
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_italicize_comments = '1'
+
+
 " Plugins
 " Vim-Plug Plugin Manager
 call plug#begin('~/local/share/nvim/plugged')
@@ -38,21 +49,3 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 call plug#end()
 
-
-" Deoplote 
-let g:deoplete#enable_at_startup = 1
-
-" Set Colorscheme
-colo gruvbox
-
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_italicize_comments = 1
-
-
-" Enable Italics for xcode
-augroup vim-colors-xcode
-    autocmd!
-augroup END
-
-autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
-autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
