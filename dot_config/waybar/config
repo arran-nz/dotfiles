@@ -1,14 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 36,
+    "height": 30,
     "modules-left": ["sway/workspaces", "custom/music"],
     "modules-center": ["sway/window", "sway/mode"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name} {icon}", 
+        "format": "❰<span color=\"#ebdbb2\"> {name} </span>❱", 
         "format-icons": {
             "1:web": "www",
             "2:code": "",
@@ -17,8 +17,8 @@
             "5:music": "",
             "6:docs": "",
             "urgent": "",
-            "focused": "X",
-            "default": "_"
+            "focused": "",
+            "default": ""
         }
     },
 
@@ -56,7 +56,7 @@
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-ethernet": "{ifname}: {ipaddr} ",
         "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
