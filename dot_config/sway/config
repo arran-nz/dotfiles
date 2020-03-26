@@ -6,7 +6,7 @@
 
 
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
+set $mod Mod4
 
 ### Notification Service
 exec mako
