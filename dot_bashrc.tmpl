@@ -31,14 +31,17 @@ alias vi="nvim"
 alias r="ranger"
 
 export EDITOR="nvim"
+export BROWSER="firefox-wayland"
 
 # Git Bash PS1 Config
 source ~/.bash_git_ps1.sh
 
+{{- if eq .chezmoi.hostname "gecko" }}
 # WSL Settings ------------
 export DOCKER_HOST=tcp://localhost:2375
 # X Server
 export DISPLAY=0:0
+{{- end }}
 
 # Remove the need to type `cd` to enter directories
 shopt -s autocd
