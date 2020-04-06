@@ -20,3 +20,11 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
+
+# Completion
+
+# Gitlab CLI Completion
+. <(gitlab completion)
+
+# RabbitMqAdmin
+. <(rabbitmqadmin --bash-completion)
