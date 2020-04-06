@@ -1,0 +1,17 @@
+[core]
+	filemode = false
+	autocrlf = input
+	editor = nvim
+	safecrlf = false
+[user]
+	email = {{ .email }}
+	name = {{ .name }}
+[alias]
+	adog = log --all --decorate --oneline --graph
+[diff]
+	tool = nvim
+[diff.tool "nvimdiff"]
+    prompt = true
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[rebase]
+	instructionFormat = (%an) %s
