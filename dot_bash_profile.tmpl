@@ -15,11 +15,14 @@ alias cdwork="cd /mnt/c/Users/arran/Workspace/"
 alias acr-get="az acr repository show-tags --n mentorgg --repository"
 alias acr-list="az acr repository list --name mentorgg"
 
-# GO
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
-
+# docker aliases / functions
+function dbuild(){ docker build . -t {{ .docker_registry }}/"$@";}
+function dpush(){ docker push {{ .docker_registry }}/"$@";}
+function dbpush(){ 
+    dbuild "$@" && \
+    dpush "$@" && \
+    echo Pushed image to {{ .docker_registry }}/"$@";
+}
 
 # Completion
 
