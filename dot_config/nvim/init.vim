@@ -52,7 +52,7 @@ let g:gruvbox_invert_tabline = '1'
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'gruvbox',
       \ }
 
 " Enable Svelete plugin
