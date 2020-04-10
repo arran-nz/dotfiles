@@ -24,7 +24,7 @@ EOF
 viewer=${XIVIEWER:-xdg-open}
 editor=${XIEDITOR:-gimp}
 tmpdir="${SCREENSHOT_TMPDIR:=${TMPDIR:=${XDG_RUNTIME_DIR:-/tmp}}}/screenshots"
-ssdir=${SCREENSHOT_DIRECTORY:-$HOME/Pictures/Screenshots}
+ssdir=${SCREENSHOT_DIRECTORY:-$HOME/Pics/Screenshots}
 
 # === GETOPTS ===
 # if no opt provided, don't shift
@@ -64,7 +64,7 @@ esac
 
 # === TAKE ACTION ON FILE ===
 # in a loop, user may want to take many actions
-while
+# while
 action="$(zenity --title="[Grim] Took screenshot: $img" --width=600 --height=300 --list \
 	--column='Command' --column='Choose an action:' <<- EOF
 	wl-copy < "\$img"
@@ -77,10 +77,8 @@ action="$(zenity --title="[Grim] Took screenshot: $img" --width=600 --height=300
 	Edit image with $editor
 	mkdir -p "\$ssdir"; cp "\$img" "\$ssdir"
 	Save image to $ssdir
-	imgur -a "\$img"
-	Upload image to Imgur
 EOF
 )"
-do
+#do
 	eval "$action"
-done
+#done
