@@ -38,8 +38,8 @@ set $urgent_indicator $c3
 
 # Set inner/outer gaps
 default_border normal 0
-gaps inner 0
-gaps outer 0
+gaps inner 2
+gaps outer 2
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
