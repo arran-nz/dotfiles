@@ -2,6 +2,7 @@ max-visible=1
 anchor=top-right
 font=Inconsolata
 
+actions=1
 icons=1
 markup=1
 
@@ -15,4 +16,4 @@ border-color=#ebdbb2
 border-size=3
 border-radius=2
 
-
+default-timeout=4000
