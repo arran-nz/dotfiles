@@ -310,6 +310,7 @@ input * {
 # Custom Window Treatment
 for_window [app_id="org.clementine-player.clementine"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="firefox-wayland"] opacity 1
 
 # Run the application menu on startup
 exec $menu
