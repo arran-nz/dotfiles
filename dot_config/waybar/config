@@ -34,14 +34,14 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "tray": {
-        "icon-size": 14,
+        "icon-size": 16,
         "spacing": 10
     },
     "clock": {
         // Human Friendly
-        "format": "{:%A, %B %d at %I:%M %p}",
+        "format-alt": "{:%A, %B %d at %I:%M %p}",
         // 24hr Robot Friendly
-        "format-alt": "{:%Y-%m-%d - %H:%M}"
+        "format": "{:%Y-%m-%d - %H:%M}"
     },
     "cpu": {
         "format": "{usage}% ",
