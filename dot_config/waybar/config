@@ -4,7 +4,7 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "custom/music"],
     "modules-center": ["sway/window", "sway/mode"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "battery", "tray", "custom/worktime", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -84,5 +84,11 @@
 	"on-click": "playerctl play-pause",
 	"on-scroll-up": "playerctl previous",
 	"on-scroll-down": "playerctl next"
+    },
+    "custom/worktime": {
+        "format": "{} ⏲",
+        "interval": 60,
+        "exec": "$HOME/.config/waybar/worktime.sh 2> /dev/null",
+        "on-click": "alacritty --dimensions 60 15 --hold -t 'Floating Terminal' -e timew summary :week"
     }
 }

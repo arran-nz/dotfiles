@@ -54,6 +54,11 @@ window#waybar {
     margin: 0 15px;
     padding: 0 20px;
     border-bottom: 4px solid #b8bb26;
+}
+
+#custom-worktime {
+    padding: 0 5px;
+    border-bottom: 4px solid #ebdbb2
 
 }
 
