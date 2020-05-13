@@ -301,6 +301,12 @@ bar {
 
 }
 
+# Compose key!
+input * {
+    xkb_options compose:ralt
+}
+
+
 # Custom Window Treatment
 for_window [app_id="org.clementine-player.clementine"] floating enable
 for_window [app_id="pavucontrol"] floating enable
