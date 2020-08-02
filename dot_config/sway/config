@@ -181,6 +181,9 @@ bindsym --locked XF86AudioPrev exec playerctl previous
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Make the current window Sticky
+    bindsym $mod+Shift+s sticky toggle
+
 #
 # Moving around:
 #
