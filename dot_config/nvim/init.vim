@@ -39,6 +39,14 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 
+" Spell Checking
+" --------------
+
+" F11 Toggle Spell Check
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>
+set spelllang=en
+
 " Plugin Variables
 " ----------------
 
