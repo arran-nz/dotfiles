@@ -304,10 +304,15 @@ bar {
 
 }
 
+# Input
+
 # Compose key!
 input * {
     xkb_options compose:ralt
 }
+
+# Enable Numlock
+input * xkb_numlock enabled
 
 
 # Custom Window Treatment
