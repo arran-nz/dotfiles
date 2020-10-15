@@ -16,13 +16,13 @@ set $dark #333333
 set $dim #666666
 
 
-set $focused_bgcolor $c1
+set $focused_bgcolor $white
 set $focused_textcolor $dark
-set $focused_indicator $c3
+set $focused_indicator $c1
 
 set $inactive_bgcolor $c5
 set $inactive_textcolor $white
-set $inactive_indicator $c5
+set $inactive_indicator $c3
 
 set $unfocused_bgcolor $c4
 set $unfocused_textcolor $dim
@@ -49,8 +49,8 @@ smart_borders on
 
 # Hide Title Bars
 for_window [app_id="^.*"] opacity 1
-default_border pixel 2
-default_floating_border pixel 4
+default_border pixel 5 
+default_floating_border pixel 10
 hide_edge_borders smart
 
 client.focused $focused_bgcolor $focused_bgcolor $focused_textcolor $focused_indicator $focused_bgcolor
