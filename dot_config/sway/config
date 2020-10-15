@@ -68,13 +68,15 @@ exec swayidle -w \
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle full
 
-### Screenshots
+### Screenshots / Screensharing
 # ----------
 for_window [app_id="zenity" title="screenshot"] floating enable
 # Entire screen + menu
 bindsym print exec ~/.config/sway/scripts/screen.sh
 # Screen region + menu
 bindsym Shift+print exec ~/.config/sway/scripts/screen.sh -s
+
+bindsym Control+Shift+print exec ~/.config/sway/scripts/screen-share.sh
 
 
 ### System Menu
@@ -155,8 +157,6 @@ bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioPause exec playerctl play-pause
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
-
-
 
 ### Key bindings
 #
@@ -301,7 +301,6 @@ bindsym $mod+r mode "resize"
 
 bar {
 	swaybar_command waybar
-
 }
 
 # Input
