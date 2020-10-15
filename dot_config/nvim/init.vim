@@ -23,6 +23,8 @@ Plug 'morhetz/gruvbox'
 
 Plug 'itchyny/lightline.vim'
 
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
 
 " Native Config
@@ -76,6 +78,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Colorscheme
 colorscheme gruvbox
+
 " Render the colors correctly
 " (╯°□°）╯︵ ┻━┻
 set termguicolors
