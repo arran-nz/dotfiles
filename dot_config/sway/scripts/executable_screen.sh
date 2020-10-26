@@ -24,7 +24,7 @@ EOF
 viewer=${XIVIEWER:-xdg-open}
 editor=${XIEDITOR:-gimp}
 tmpdir="${SCREENSHOT_TMPDIR:=${TMPDIR:=${XDG_RUNTIME_DIR:-/tmp}}}/screenshots"
-ssdir=${SCREENSHOT_DIRECTORY:-$HOME/Pics/Screenshots}
+ssdir=${SCREENSHOT_DIRECTORY:-$HOME/Pictures/Screenshots}
 
 # === GETOPTS ===
 # if no opt provided, don't shift
