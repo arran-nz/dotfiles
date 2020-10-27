@@ -26,7 +26,7 @@ $ chezmoi init git@github.com:Azza292/dotfiles.git
 - Neovim / Vim
 - Waybar
 - Mako
-- Bash
+- Bash / Fish
 
 - i3 (For WSL)
 
